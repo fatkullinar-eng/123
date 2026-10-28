@@ -1,0 +1,21 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": ["src"],
+  "locale": "ru-RU",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": [
+    "Table Selection",
+    "Select/Listbox",
+    "Form",
+    "Scrollbar",
+    "Toast",
+    "CRUD"
+  ],
+  "ownership": { "Select/Listbox": "native" },
+  "requiredCommands": ["unit", "e2e"],
+  "commands": { "unit": "npm test", "e2e": "npm run test:e2e" },
+  "evidence": {
+    "crudFullFlow": "tests/browser.mjs",
+    "failurePaths": "tests/browser.mjs"
+  }
+}

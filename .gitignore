@@ -1,0 +1,8 @@
+node_modules/
+dist/
+release/
+test-results/
+*.log
+
+build/uninstall-files.nsh
+build/installer.generated.nsi

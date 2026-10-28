@@ -63,6 +63,7 @@ function boot(): { workspace: Workspace; error: string } {
   }
 }
 const initial = boot();
+const standalone = import.meta.env.MODE === "standalone";
 export default function App() {
   const [workspace, setWorkspace] = useState(initial.workspace);
   const project = workspace.current;
@@ -292,7 +293,7 @@ export default function App() {
         <div className="header-right">
           <span className="offline">
             <HardDrive size={14} />
-            Локальная версия
+            {standalone ? "HTML · офлайн" : "Локальная версия"}
           </span>
           <Button onClick={openImport}>
             <ArrowUpFromLine size={16} />
@@ -324,6 +325,13 @@ export default function App() {
             Как считается
           </Button>
         </div>
+        {standalone && (
+          <div className="banner">
+            Проекты сохраняются в этом браузере. Для переноса и резервной копии
+            выгружайте JSON-копии. После перемещения HTML-файла или очистки
+            данных браузера может потребоваться восстановление из копии.
+          </div>
+        )}
         {storageError && (
           <div className="banner error" role="alert">
             {storageError}
@@ -1258,6 +1266,15 @@ export default function App() {
               Отдельный показатель — справочная часть бюджета, а не скидка.
             </p>
             <h3>Локальные данные</h3>
+            {standalone && (
+              <p>
+                HTML-версия работает без установки, сервера и интернета.
+                Сохранение привязано к браузеру и расположению файла.
+                Используйте один и тот же браузер и храните HTML в постоянной
+                папке. Приватный режим и ограничения браузера могут отключать
+                сохранение; при этом можно выгрузить расчёт и JSON-копию.
+              </p>
+            )}
             <p>
               Черновик сохраняется на компьютере после корректного изменения.
               «Сохранить проект» создаёт снимок вместе с его прайсом. JSON-копия

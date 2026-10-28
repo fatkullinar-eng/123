@@ -26,3 +26,7 @@ The user requests an offline Windows 10/11 calculator with spreadsheet import. T
 - Local-only filters/query/page persist in component state, never URL (file:// desktop, object names are private/nonshareable). Local search immediate, IME commits only. 20 rows per page; filter changes reset page, range is visible. No network request race.
 - Remove saved snapshot uses app-owned confirmation naming the project. New draft uses confirmation; saved snapshots remain. Export downloads XLSX with detail and summary. Print uses print CSS. JSON restore validates the complete snapshot before replacing current draft, leaves other saved projects intact.
 - Locale ru-RU / RUB; timestamps Europe/Moscow, label МСК. Round monetary line amounts to kopecks with decimal arithmetic, sum rounded lines. Sequential reserve uses prior included amounts. No invented tax or recurring royalty calculations.
+
+## Автономный HTML
+
+`Bar-Estimate.html` генерируется из тех же `src/App.tsx`, shared primitives и CSS. Денежные правила и владельцы компонентов одинаковы. HTML использует встроенный classic script без module imports или fetch, поэтому не требует сервера. Браузерное хранилище привязано к браузеру/профилю/расположению файла; предупреждение постоянно видно. JSON-копии — поддерживаемый перенос между браузерами и файлами. При недоступном localStorage расчёт и экспорт продолжают работать с существующим предупреждением; сохранение проектов блокируется. Проверки: `npm run test:html`.

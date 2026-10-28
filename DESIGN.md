@@ -42,7 +42,7 @@ components:
 
 ## Overview
 
-Product register. Managers configure a beer-bar franchise investment estimate on a Windows laptop, offline, in Russian. Source: the user brief and the supplied 2026-10-28 workbook. No Japan-market scope. The reference is a bar architect's cost ledger: quiet blue graphite, a restrained brass total, clear section dividers. Signature: a proportional cost ribbon above a numbered ledger, making the composition of investment visible. Avoid alcohol imagery, promotional dashboards, neon and decorative KPI cards.
+Product register. Managers configure a beer-bar franchise investment estimate on a Windows laptop, offline, in Russian. The standalone HTML surface uses exactly the same tokens and components; a persistent browser-storage notice is the only layout addition. Source: the user brief and the supplied 2026-10-28 workbook. No Japan-market scope. The reference is a bar architect's cost ledger: quiet blue graphite, a restrained brass total, clear section dividers. Signature: a proportional cost ribbon above a numbered ledger, making the composition of investment visible. Avoid alcohol imagery, promotional dashboards, neon and decorative KPI cards.
 
 ## Colors
 

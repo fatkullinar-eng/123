@@ -17,7 +17,9 @@
     "desktop": "npm run build && electron .",
     "package:win": "npm run build && electron-builder --win dir --x64 && node scripts/compile-installer.cjs",
     "package:linux": "npm run build && electron-builder --linux dir --x64",
-    "test:a11y": "node tests/accessibility.mjs"
+    "test:a11y": "node tests/accessibility.mjs",
+    "build:html": "tsc --noEmit && node scripts/build-html.mjs",
+    "test:html": "node tests/html.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
